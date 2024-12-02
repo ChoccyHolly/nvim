@@ -101,7 +101,7 @@ require("lazy").setup({
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
-        }
+        },
     },
 
     {
@@ -124,5 +124,37 @@ require("lazy").setup({
 
     {
         "tpope/vim-fugitive",
+    },
+
+    {
+        "folke/edgy.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("plugins/edgy")
+        end,
+    },
+
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        },
+    },
+
+    {
+        "luukvbaal/statuscol.nvim",
+        config = function()
+            require("plugins/statuscol")
+        end,
+    },
+
+    {
+        "goolord/alpha-nvim",
+        config = function()
+            require("plugins/alpha")
+        end,
     },
 })

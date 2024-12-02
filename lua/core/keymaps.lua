@@ -54,3 +54,6 @@ nmap {"<leader>cs", ":Trouble symbols toggle win.position=bottom<cr>", {silent =
 nmap {"<leader>cl", ":Trouble lsp toggle<cr>", {silent = true}}
 nmap {"<leader>xL", ":Trouble loclist toggle<cr>", {silent = true}}
 nmap {"<leader>xQ", ":Trouble qflistoggle<cr>", {silent = true}}
+
+-- Open Neo-Tree
+nmap {"<leader>fs", ":Neotree toggle<cr>", {silent = true}}
