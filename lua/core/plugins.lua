@@ -24,6 +24,18 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
+        config = function()
+            require("plugins/neo-tree")
+        end,
+    },
+    {
+        "ryanmsnyder/toggleterm-manager.nvim",
+        dependencies = {
+            "akinsho/nvim-toggleterm.lua",
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
+        },
+        config = true,
     },
     {
         "folke/tokyonight.nvim",
@@ -35,7 +47,7 @@ require("lazy").setup({
     },
     {
         "hrsh7th/nvim-cmp",
-        dependencies = {"hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp"},
+        dependencies = { "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp" },
         config = function()
             require("plugins/cmp")
         end,
@@ -60,6 +72,20 @@ require("lazy").setup({
         ---@module "ibl"
         ---@type ibl.config
         opts = {},
+    },
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        config = function()
+            require("plugins/toggleterm")
+        end,
+    },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("plugins/flash")
+        end,
     },
     {
         "folke/edgy.nvim",
@@ -87,6 +113,12 @@ require("lazy").setup({
         end,
     },
     {
+        "petertriho/nvim-scrollbar",
+        config = function()
+            require("plugins/scrollbar")
+        end,
+    },
+    {
         "luukvbaal/statuscol.nvim",
         config = function()
             require("plugins/statuscol")
@@ -99,6 +131,17 @@ require("lazy").setup({
         end,
     },
     {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
+        opts = {},
+    },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
+    {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = true,
@@ -108,8 +151,14 @@ require("lazy").setup({
         version = "v2.*",
         build = "make install_jsregexp"
     },
+    {
+        "abecodes/tabout.nvim",
+        lazy = false,
+        opts = {},
+    },
 
     { "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
+    { "chrisgrieser/nvim-spider", lazy = true },
     { "lewis6991/gitsigns.nvim", opts = {} },
     { "mrcjkb/rustaceanvim", lazy = false },
     { "numToStr/Comment.nvim", opts = {} },

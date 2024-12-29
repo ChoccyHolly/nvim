@@ -15,9 +15,9 @@ require("lualine").setup {
         always_divide_middle = true,
         globalstatus = true,
         refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
+            statusline = 10,
+            tabline = 100,
+            winbar = 100,
         }
     },
     sections = {
@@ -25,7 +25,15 @@ require("lualine").setup {
             {"mode", separator = {left = ""}, right_padding = 2},
         },
         lualine_b = {
-            "filename",
+            {
+                "filename",
+                symbols = {
+                    modified = "",
+                    readonly = "󰷊",
+                    unnamed = "Unnamed",
+                    newfile = "󰝒",
+                },
+            },
             {"branch", component_separators = {right = ""}},
             {"diff", padding = {left = 0}},
         },
@@ -33,7 +41,7 @@ require("lualine").setup {
             {
                 "diagnostics",
                 sources = {"nvim_diagnostic"},
-                symbols = {error = " ", warn = " ", info = " "},
+                symbols = {error = " ", warn = " ", info = " ", hint = " "},
                 diagnostics_color = {
                     color_error = {fg = tokyonightcolors.red},
                     color_warn = {fg = tokyonightcolors.yellow},

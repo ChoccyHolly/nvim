@@ -1,4 +1,4 @@
--- Keymap configs
+-- meymap configs
 local map = function(tbl)
     vim.keymap.set(tbl[1], tbl[2], tbl[3], tbl[4])
 end
@@ -19,19 +19,19 @@ end
 vim.g.mapleader = ","
 
 -- Buffer control
-nmap {"<Tab>", ":BufferNext<cr>", {silent = true}}
-nmap {"<S-Tab>", ":BufferPrevious<cr>", {silent = true}}
-nmap {"<leader><Tab>", ":BufferClose<cr>", {silent = true}}
-nmap {"<leader><S-Tab>", ":BufferPin<cr>", {silent = true}}
+nmap {"<Tab>", "<cmd>BufferNext<cr>"}
+nmap {"<S-Tab>", "<cmd>BufferPrevious<cr>"}
+nmap {"<leader><Tab>", "<cmd>BufferClose<cr>"}
+nmap {"<leader><S-Tab>", "<cmd>BufferPin<cr>"}
 
 -- Split navigation
-nmap {"<C-h>", ":wincmd h<CR>", {silent = true}}
-nmap {"<C-j>", ":wincmd j<CR>", {silent = true}}
-nmap {"<C-k>", ":wincmd k<CR>", {silent = true}}
-nmap {"<C-l>", ":wincmd l<CR>", {silent = true}}
+map {{"n", "v", "i", "t"}, "<C-h>", "<cmd>wincmd h<cr>"}
+map {{"n", "v", "i", "t"}, "<C-j>", "<cmd>wincmd j<cr>"}
+map {{"n", "v", "i", "t"}, "<C-k>", "<cmd>wincmd k<cr>"}
+map {{"n", "v", "i", "t"}, "<C-l>", "<cmd>wincmd l<cr>"}
 
 -- Remove highlighting on escape
-nmap {"<esc>", ":nohlsearch<cr>", {silent = true}}
+nmap {"<esc>", "<cmd>nohlsearch<cr>"}
 
 -- Tab controls indent in visual
 vmap {"<Tab>", ">gv"}
@@ -42,18 +42,36 @@ vmap {">", ">gv"}
 vmap {"<", "<gv"}
 
 -- Telescope keymaps
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 nmap {"<leader>ff", builtin.find_files}
 nmap {"<leader>fg", builtin.live_grep}
 nmap {"<leader>fb", builtin.buffers}
 nmap {"<leader>fh", builtin.help_tags}
 
 -- Trouble keymaps
-nmap {"<leader>xx", ":Trouble diagnostics toggle<cr>", {silent = true}}
-nmap {"<leader>cs", ":Trouble symbols toggle win.position=bottom<cr>", {silent = true}}
-nmap {"<leader>cl", ":Trouble lsp toggle<cr>", {silent = true}}
-nmap {"<leader>xL", ":Trouble loclist toggle<cr>", {silent = true}}
-nmap {"<leader>xQ", ":Trouble qflistoggle<cr>", {silent = true}}
+nmap {"<leader>xx", "<cmd>Trouble diagnostics toggle<cr>"}
+nmap {"<leader>xs", "<cmd>Trouble symbols toggle win.position=bottom<cr>"}
+nmap {"<leader>xl", "<cmd>Trouble lsp toggle<cr>"}
+nmap {"<leader>xL", "<cmd>Trouble loclist toggle<cr>"}
+nmap {"<leader>xt", "<cmd>Trouble todo toggle<cr>"}
 
 -- Open Neo-Tree
-nmap {"<leader>fs", ":Neotree toggle<cr>", {silent = true}}
+nmap {"<leader>e", function() require("edgy").toggle("left") end}
+nmap {"<leader>g", "<cmd>Neotree position=right git_status toggle<cr>"}
+
+-- Toggleterm
+nmap {"<leader>t", "<cmd>Telescope toggleterm_manager<cr>"}
+map {"t", "<C-t>", "<cmd>Telescope toggleterm_manager<cr>"}
+map {"t", "<C-CR>", "<cmd>ToggleTerm<cr>"}
+map {"t", "<C-BS>", "<cmd>TermExec cmd=\"exit\"<cr>"}
+
+-- Lazy
+nmap {"<leader>l", ":Lazy<cr>", {silent = true}}
+
+-- Flash
+nmap {"s", function() require("flash").jump() end}
+
+-- Spider
+nmap {"w", function() require("spider").motion("w") end}
+nmap {"e", function() require("spider").motion("e") end}
+nmap {"b", function() require("spider").motion("b") end}

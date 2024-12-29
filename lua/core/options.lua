@@ -19,6 +19,10 @@ opt.list = true
 opt.listchars:append "eol:↴"
 opt.cursorline = true
 
+-- Splits
+opt.splitright = true
+opt.splitbelow = true
+
 -- Indents and Tabs
 vim.cmd [[filetype plugin indent on]]
 opt.expandtab = true
