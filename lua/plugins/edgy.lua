@@ -1,4 +1,4 @@
--- Config for edgy
+-- Edgy config
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
 
@@ -24,14 +24,11 @@ require("edgy").setup {
             end,
         },
     },
-    right = {
+    bottom = {
         {
             ft = "toggleterm",
             title = "Terminal",
-            size = { width = 0.4 },
         },
-    },
-    bottom = {
         {
             ft = "trouble",
             title = "Trouble",

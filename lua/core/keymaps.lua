@@ -1,4 +1,4 @@
--- meymap configs
+-- Keymap configs
 local map = function(tbl)
     vim.keymap.set(tbl[1], tbl[2], tbl[3], tbl[4])
 end
@@ -19,10 +19,14 @@ end
 vim.g.mapleader = ","
 
 -- Buffer control
-nmap {"<Tab>", "<cmd>BufferNext<cr>"}
-nmap {"<S-Tab>", "<cmd>BufferPrevious<cr>"}
-nmap {"<leader><Tab>", "<cmd>BufferClose<cr>"}
-nmap {"<leader><S-Tab>", "<cmd>BufferPin<cr>"}
+-- nmap {"<Tab>", "<cmd>BufferNext<cr>"}
+-- nmap {"<S-Tab>", "<cmd>BufferPrevious<cr>"}
+-- nmap {"<leader><Tab>", "<cmd>BufferClose<cr>"}
+-- nmap {"<leader><S-Tab>", "<cmd>BufferPin<cr>"}
+nmap {"<Tab>", "<cmd>BufferLineCycleNext<cr>"}
+nmap {"<S-Tab>", "<cmd>BufferLineCyclePrev<cr>"}
+nmap {"<leader><Tab>", "<cmd>bdelete<cr>"}
+nmap {"<leader><S-Tab>", "<cmd>BufferLineTogglePin<cr>"}
 
 -- Split navigation
 map {{"n", "v", "i", "t"}, "<C-h>", "<cmd>wincmd h<cr>"}

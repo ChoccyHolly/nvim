@@ -1,4 +1,4 @@
--- Config for lualine
+-- Lualine config
 local tokyonightcolors = require("tokyonight.colors").setup {style = "night"}
 
 require("lualine").setup {

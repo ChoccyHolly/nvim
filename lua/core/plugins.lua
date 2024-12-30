@@ -95,11 +95,14 @@ require("lazy").setup({
         end,
     },
     {
-        "romgrk/barbar.nvim",
-        dependencies = { "lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons" },
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = { separator_at_end = false },
+        "akinsho/bufferline.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        version = "*",
+        config = function()
+            require("plugins/bufferline")
+        end,
     },
+    -- TODO: fix this shit ^^^
     {
         "folke/noice.nvim",
         dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
@@ -164,6 +167,7 @@ require("lazy").setup({
     { "numToStr/Comment.nvim", opts = {} },
 
     "nvim-telescope/telescope-fzf-native.nvim",
+    "sitiom/nvim-numbertoggle",
     "neovim/nvim-lspconfig",
     "tpope/vim-fugitive",
 })

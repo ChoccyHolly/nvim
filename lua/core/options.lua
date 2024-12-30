@@ -3,11 +3,12 @@ local g = vim.g
 local opt = vim.opt
 
 -- General
-opt.mouse = ''
-opt.clipboard = 'unnamedplus'
+opt.mouse = ""
+opt.clipboard = "unnamedplus"
 opt.swapfile = false
 
 -- Visual
+vim.cmd [[colorscheme tokyonight]]
 vim.cmd [[colorscheme tokyonight-night]]
 vim.cmd [[syntax enable]]
 vim.termguicolors = true
