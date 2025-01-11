@@ -102,7 +102,6 @@ require("lazy").setup({
             require("plugins/bufferline")
         end,
     },
-    -- TODO: fix this shit ^^^
     {
         "folke/noice.nvim",
         dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
