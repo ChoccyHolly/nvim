@@ -26,6 +26,7 @@ opt.splitbelow = true
 
 -- Indents and Tabs
 vim.cmd [[filetype plugin indent on]]
+vim.cmd [[autocmd FileType * set expandtab shiftwidth=4 tabstop=4]]
 opt.expandtab = true
 opt.shiftwidth = 4
 opt.tabstop = 4

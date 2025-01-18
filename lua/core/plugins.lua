@@ -160,6 +160,7 @@ require("lazy").setup({
     },
 
     { "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
+    { "brenoprata10/nvim-highlight-colors", opts = {} },
     { "chrisgrieser/nvim-spider", lazy = true },
     { "lewis6991/gitsigns.nvim", opts = {} },
     { "mrcjkb/rustaceanvim", lazy = false },
