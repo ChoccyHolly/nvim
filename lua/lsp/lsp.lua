@@ -1,11 +1,10 @@
 -- Lsp config
 
 -- Server setups
-local lspconfig = require("lspconfig")
-lspconfig.clangd.setup {}
-lspconfig.pyright.setup {}
-lspconfig.lua_ls.setup {}
-lspconfig.ts_ls.setup {}
+vim.lsp.enable("clangd")
+vim.lsp.enable("pyright")
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("ts_ls")
 
 -- Inlay hints
 vim.lsp.inlay_hint.enable()

@@ -35,7 +35,9 @@ require("lazy").setup({
             "nvim-telescope/telescope.nvim",
             "nvim-lua/plenary.nvim",
         },
-        config = true,
+        config = function()
+            require("plugins/toggleterm-manager")
+        end,
     },
     {
         "folke/tokyonight.nvim",
