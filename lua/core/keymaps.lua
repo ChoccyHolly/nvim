@@ -19,20 +19,16 @@ end
 vim.g.mapleader = ","
 
 -- Buffer control
--- nmap {"<Tab>", "<cmd>BufferNext<cr>"}
--- nmap {"<S-Tab>", "<cmd>BufferPrevious<cr>"}
--- nmap {"<leader><Tab>", "<cmd>BufferClose<cr>"}
--- nmap {"<leader><S-Tab>", "<cmd>BufferPin<cr>"}
 nmap {"<Tab>", "<cmd>BufferLineCycleNext<cr>"}
 nmap {"<S-Tab>", "<cmd>BufferLineCyclePrev<cr>"}
 nmap {"<leader><Tab>", "<cmd>bdelete<cr>"}
 nmap {"<leader><S-Tab>", "<cmd>BufferLineTogglePin<cr>"}
 
 -- Split navigation
-map {{"n", "v", "i", "t"}, "<C-h>", "<cmd>wincmd h<cr>"}
-map {{"n", "v", "i", "t"}, "<C-j>", "<cmd>wincmd j<cr>"}
-map {{"n", "v", "i", "t"}, "<C-k>", "<cmd>wincmd k<cr>"}
-map {{"n", "v", "i", "t"}, "<C-l>", "<cmd>wincmd l<cr>"}
+-- map {{"n", "v", "i", "t"}, "<C-h>", "<cmd>wincmd h<cr>"}
+-- map {{"n", "v", "i", "t"}, "<C-j>", "<cmd>wincmd j<cr>"}
+-- map {{"n", "v", "i", "t"}, "<C-k>", "<cmd>wincmd k<cr>"}
+-- map {{"n", "v", "i", "t"}, "<C-l>", "<cmd>wincmd l<cr>"}
 
 -- Remove highlighting on escape
 nmap {"<esc>", "<cmd>nohlsearch<cr>"}
