@@ -22,7 +22,12 @@ require("lualine").setup {
     },
     sections = {
         lualine_a = {
-            {"mode", separator = {left = ""}, right_padding = 2},
+            {
+                "mode",
+                separator = {left = ""},
+                right_padding = 2,
+                color = {gui = "bold"},
+            },
         },
         lualine_b = {
             {
@@ -52,7 +57,13 @@ require("lualine").setup {
         lualine_x = {},
         lualine_y = {"filetype", "progress"},
         lualine_z = {
-            {"datetime", style="%I:%M %p", separator = {right = ""}, left_padding = 2},
+            {
+                "datetime",
+                style="%I:%M %p",
+                separator = {right = ""},
+                left_padding = 2,
+                color = {gui = "bold"},
+            },
         },
     },
     inactive_sections = {
