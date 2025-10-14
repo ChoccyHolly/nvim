@@ -180,6 +180,7 @@ require("lazy").setup({
     { "chrisgrieser/nvim-spider", lazy = true },
     { "lewis6991/gitsigns.nvim", opts = {} },
     { "mrcjkb/rustaceanvim", lazy = false },
+    { "windwp/nvim-ts-autotag", opts = {} },
     { "numToStr/Comment.nvim", opts = {} },
 
     "nvim-telescope/telescope-fzf-native.nvim",
