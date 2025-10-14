@@ -52,6 +52,22 @@ require("lazy").setup({
         end,
     },
     {
+        "folke/noice.nvim",
+        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+        event = "VeryLazy",
+        config = function()
+            require("plugins/noice")
+        end,
+    },
+    {
+        "akinsho/bufferline.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        version = "*",
+        config = function()
+            require("plugins/bufferline")
+        end,
+    },
+    {
         "folke/tokyonight.nvim",
         opts = {
             style = "night",
@@ -107,20 +123,6 @@ require("lazy").setup({
         config = function()
             require("plugins/edgy")
         end,
-    },
-    {
-        "akinsho/bufferline.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        version = "*",
-        config = function()
-            require("plugins/bufferline")
-        end,
-    },
-    {
-        "folke/noice.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-        event = "VeryLazy",
-        opts = {},
     },
     {
         "nvim-treesitter/nvim-treesitter",
