@@ -1,7 +1,9 @@
 -- Noice config
 require("noice").setup({
     lsp = {
-        signature = { opts = { size = { max_width = 50 } } },
+        signature = {
+            auto_open = { enabled = false },
+        },
         override = {
             ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
             ["vim.lsp.util.stylize_markdown"] = true,

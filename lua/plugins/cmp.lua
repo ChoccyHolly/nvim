@@ -20,8 +20,8 @@ cmp.setup {
     mapping = cmp.mapping.preset.insert({
         ['<C-Space>'] = cmp.mapping.complete({}),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = false,
@@ -44,7 +44,7 @@ cmp.setup {
                 fallback()
             end
         end, {"i", "s"}),
-        ['D'] = cmp.mapping(function(fallback)
+        ['<C-d>'] = cmp.mapping(function(fallback)
             if cmp.visible_docs() then
                 cmp.close_docs()
             elseif cmp.visible() then

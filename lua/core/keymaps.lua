@@ -24,12 +24,6 @@ nmap {"<S-Tab>", "<cmd>BufferLineCyclePrev<cr>"}
 nmap {"<leader><Tab>", "<cmd>bdelete<cr>"}
 nmap {"<leader><S-Tab>", "<cmd>BufferLineTogglePin<cr>"}
 
--- Split navigation
--- map {{"n", "v", "i", "t"}, "<C-h>", "<cmd>wincmd h<cr>"}
--- map {{"n", "v", "i", "t"}, "<C-j>", "<cmd>wincmd j<cr>"}
--- map {{"n", "v", "i", "t"}, "<C-k>", "<cmd>wincmd k<cr>"}
--- map {{"n", "v", "i", "t"}, "<C-l>", "<cmd>wincmd l<cr>"}
-
 -- Remove highlighting on escape
 nmap {"<esc>", "<cmd>nohlsearch<cr>"}
 
@@ -75,3 +69,16 @@ nmap {"s", function() require("flash").jump() end}
 nmap {"w", function() require("spider").motion("w") end}
 nmap {"e", function() require("spider").motion("e") end}
 nmap {"b", function() require("spider").motion("b") end}
+
+-- Noice LSP Scrolling
+vim.keymap.set({ "n", "i", "s" }, "<c-f>", function()
+    if not require("noice.lsp").scroll(4) then
+        return "<c-f>"
+    end
+end, { silent = true, expr = true })
+
+vim.keymap.set({ "n", "i", "s" }, "<c-b>", function()
+    if not require("noice.lsp").scroll(-4) then
+        return "<c-b>"
+    end
+end, { silent = true, expr = true })
